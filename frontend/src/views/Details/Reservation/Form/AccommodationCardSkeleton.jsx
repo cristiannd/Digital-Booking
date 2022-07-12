@@ -1,5 +1,5 @@
 import { ButtonFilled } from 'components/Button'
-import { Line } from 'components/Line'
+import Divider from 'components/Divider'
 import React from 'react'
 import { IoLocationSharp } from 'react-icons/io5'
 import styled from 'styled-components'
@@ -24,17 +24,17 @@ export const AccommodationCardSkeleton = () => {
               <div></div>
             </div>
           </Location>
-          <Line />
+          <Divider />
           <Check>
             <span></span>
             <span></span>
           </Check>
-          <Line />
+          <Divider />
           <Check>
             <span></span>
             <span></span>
           </Check>
-          <Line />
+          <Divider />
           <ButtonFilled>Confirmar reserva</ButtonFilled>
         </div>
       </div>

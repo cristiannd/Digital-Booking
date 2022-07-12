@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { StarRating } from 'components/Rating'
 import { IoLocationSharp } from 'react-icons/io5'
-import { Line } from 'components/Line'
+import Divider from 'components/Divider'
 import { ButtonFilled } from 'components/Button'
 import { AccommodationCardSkeleton } from './AccommodationCardSkeleton'
 
@@ -28,17 +28,17 @@ export const AccommodationCard = ({ accommodation, date }) => {
             <span><IoLocationSharp /></span>
             <p>{address} {addressNumber}, {city}, {country}</p>
           </Location>
-          <Line />
+          <Divider />
           <Check>
             <span>Check in</span>
             <span>{date ? formatDate(date[0]) : '_/_/_'}</span>
           </Check>
-          <Line />
+          <Divider />
           <Check>
             <span>Check out</span>
             <span>{date ? formatDate(date[1]) : '_/_/_'}</span>
           </Check>
-          <Line />
+          <Divider />
           <ButtonFilled type='submit'>Confirmar reserva</ButtonFilled>
         </div>
       </div>

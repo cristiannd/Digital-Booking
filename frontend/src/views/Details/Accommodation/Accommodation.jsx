@@ -8,7 +8,7 @@ import { Location } from './Location/Location'
 import { SubHeader } from './SubHeader/SubHeader'
 import { AvailableDates } from './AvailableDates/AvailableDates'
 import { Subtitle } from 'components/Subtitle'
-import { Line } from 'components/Line'
+import Divider from 'components/Divider'
 import { TermsAndConditions } from 'components/TermsAndConditions'
 
 export const Accommodation = () => {
@@ -31,7 +31,7 @@ export const Accommodation = () => {
       <Description>{accommodation?.description}</Description>
 
       <Subtitle view="accommodation">¿Qué ofrece este lugar?</Subtitle>
-      <Line lineColor="orange" />
+      <Divider lineColor="orange" />
       <Features accommodation={accommodation} />
 
       <Subtitle view="accommodation" background="lightGrey">
@@ -40,11 +40,11 @@ export const Accommodation = () => {
       <AvailableDates date={date} setDate={setDate} accommodation={accommodation} />
 
       <Subtitle view="accommodation">¿Dónde vas a estar?</Subtitle>
-      <Line lineColor="orange" />
+      <Divider lineColor="orange" />
       <Location accommodation={accommodation} />
 
       <Subtitle view="accommodation">Que tenés que saber</Subtitle>
-      <Line lineColor="orange" />
+      <Divider lineColor="orange" />
       <TermsAndConditions accommodation={accommodation} />
     </StyledAccommodation>
   )

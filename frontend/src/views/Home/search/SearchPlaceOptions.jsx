@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { GoLocation } from 'react-icons/go'
-import { Line } from 'components/Line'
+import Divider from 'components/Divider'
 
 export const SearchPlaceOptions = ({
   searchOptionsActived,
@@ -34,7 +34,7 @@ export const SearchPlaceOptions = ({
                   <p className="country">{e.country}</p>
                 </div>
               </Location>
-              {array.length - 1 > indice && <Line lineColor="orange" />}
+              {array.length - 1 > indice && <Divider lineColor="orange" />}
             </Row>
           </li>
         ))}

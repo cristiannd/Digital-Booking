@@ -1,5 +1,5 @@
 import { ButtonFilled } from 'components/Button'
-import { Line } from 'components/Line'
+import Divider from 'components/Divider'
 import { StarRating } from 'components/Rating'
 import { useState } from 'react'
 import { IoLocationSharp } from 'react-icons/io5'
@@ -34,17 +34,17 @@ const ReservationCard = ({ reservationList }) => {
             {product.locationDTO.address} {product.locationDTO.addressNumber}
           </p>
         </Location>
-        <Line />
+        <Divider />
         <div>
           <p>Check in</p>
           <p>{startDay}</p>
         </div>
-        <Line />
+        <Divider />
         <div>
           <p>Check out</p>
           <p>{finishDay}</p>
         </div>
-        <Line />
+        <Divider />
         <ButtonFilled onClick={viewMapHandler}>Ver mapa</ButtonFilled>
       </div>
       <MapContainer viewMap={viewMap}>

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Line } from 'components/Line'
+import Divider from 'components/Divider'
 import { useState } from 'react'
 
 export const OptionsList = ({
@@ -44,7 +44,7 @@ export const OptionsList = ({
               <OptionRow>
                 <div>{featureOnDatabase.feature}</div>
               </OptionRow>
-              {array.length - 1 > indice && <Line lineColor='orange' />}
+              {array.length - 1 > indice && <Divider lineColor='orange' />}
             </Row>
           </li>
         ))}
