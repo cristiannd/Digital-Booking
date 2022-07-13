@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Map } from 'components/Map'
+import Map  from 'components/Map'
 import { LocationSkeleton } from './LocationSkeleton'
 
 export const Location = ({ accommodation }) => {

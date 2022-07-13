@@ -2,7 +2,7 @@ import { LinkFilled } from 'components/Button'
 import { BsFillPatchCheckFill } from 'react-icons/bs'
 import styled from 'styled-components'
 
-const SuccessMessage = ({ title, subtitle, button, to }) => {
+export default function SuccessMessage({ title, subtitle, button, to }) {
   return (
     <StyledSuccessMessage>
       <BsFillPatchCheckFill />
@@ -14,8 +14,6 @@ const SuccessMessage = ({ title, subtitle, button, to }) => {
     </StyledSuccessMessage>
   )
 }
-
-export default SuccessMessage
 
 const StyledSuccessMessage = styled.section`
   max-width: 500px;

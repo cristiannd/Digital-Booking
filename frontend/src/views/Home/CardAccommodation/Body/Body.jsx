@@ -2,13 +2,13 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { FeatureIcons } from 'components/Feature'
 import { IoLocationSharp } from 'react-icons/io5'
-import { Map } from 'components/Map'
 import { ButtonFilled } from 'components/Button'
+import  Map from 'components/Map'
 
 export const Body = ({ features, location }) => {
   const [viewMap, setViewMap] = useState(false)
 
-  const {latitude, longitude, city, country} = location
+  const { latitude, longitude, city, country } = location
 
   const viewMapHandler = () => {
     setViewMap(!viewMap)
@@ -23,7 +23,7 @@ export const Body = ({ features, location }) => {
         </p>
       </Location>
       <Features>
-        {features.map((feature) => (
+        {features.map(feature => (
           <FeatureIcons key={feature.id} feature={feature} />
         ))}
       </Features>
@@ -46,7 +46,7 @@ const Location = styled.div`
   gap: 5px;
 
   svg {
-    color: ${(props) => props.theme.colors.grey};
+    color: ${props => props.theme.colors.grey};
   }
 
   p {
@@ -57,7 +57,7 @@ const Location = styled.div`
   button {
     background-color: transparent;
     border: none;
-    color: ${(props) => props.theme.colors.orange};
+    color: ${props => props.theme.colors.orange};
     font-size: 12px;
     font-weight: 700;
     cursor: pointer;
@@ -70,14 +70,14 @@ const Features = styled.div`
 `
 
 const MapContainer = styled.div`
-  display: ${({viewMap}) => viewMap ? "flex" : "none"};
+  display: ${({ viewMap }) => (viewMap ? 'flex' : 'none')};
   justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: 3px solid ${(props) => props.theme.colors.grey};
+  border: 3px solid ${props => props.theme.colors.grey};
   border-radius: 12px;
 
   & > button {
