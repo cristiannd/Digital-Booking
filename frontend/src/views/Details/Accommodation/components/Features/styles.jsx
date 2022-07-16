@@ -1,22 +1,4 @@
 import styled from 'styled-components'
-import { FeatureIconsAndNames } from 'components/Feature'
-import { FeaturesSkeleton } from './FeaturesSkeleton'
-
-export const Features = ({ accommodation }) => {
-  if (!accommodation) return <FeaturesSkeleton />
-
-  const { featureDTOSet } = accommodation
-
-  return (
-    <StyledFeatures>
-      <AmenitiesList>
-        {featureDTOSet.map((feature) => (
-          <FeatureIconsAndNames key={feature.id} feature={feature} />
-        ))}
-      </AmenitiesList>
-    </StyledFeatures>
-  )
-}
 
 const StyledFeatures = styled.section`
   padding: 1rem 0.5rem 0;
@@ -53,3 +35,5 @@ const AmenitiesList = styled.div`
     grid-template-columns: repeat(4, 1fr);
   }
 `
+
+export { StyledFeatures, AmenitiesList }

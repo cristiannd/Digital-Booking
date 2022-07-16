@@ -1,15 +1,15 @@
 import { useOutletContext } from 'react-router-dom'
 import styled from 'styled-components'
 import useWindowDimensions from 'hooks/useWindowDimensions'
-import { Carousel } from './Carousel/Carousel'
-import { Features } from './Features/Features'
-import { Gallery } from './Gallery/Gallery'
-import { Location } from './Location/Location'
-import { SubHeader } from './SubHeader/SubHeader'
-import { AvailableDates } from './AvailableDates/AvailableDates'
+import { Features } from './components/Features'
+import { AvailableDates } from './components/AvailableDates'
 import { Subtitle } from 'components/Subtitle'
 import { TermsAndConditions } from 'components/TermsAndConditions'
 import { Divider } from 'components/Divider'
+import { SubHeader } from './components/SubHeader'
+import { Location } from './components/Location'
+import { Carousel } from './components/Carousel'
+import { Gallery } from './components/Gallery'
 
 export const Accommodation = () => {
   const { accommodation, date, setDate } = useOutletContext()

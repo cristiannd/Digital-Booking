@@ -1,40 +1,5 @@
-import { AiOutlineClose } from 'react-icons/ai'
 import styled from 'styled-components'
 import { Carousel as ReactCarousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-
-export const PopupCarousel = ({
-  viewMoreGallery,
-  setViewMoreGallery,
-  imageDTOSet,
-}) => {
-  return (
-    <StyledPopupCarousel
-      viewMoreGallery={viewMoreGallery}
-    >
-      <Carousel
-        autoPlay={false}
-        emulateTouch={false}
-        infiniteLoop={true}
-        showArrows={true}
-        showIndicators={false}
-        showThumbs={true}
-        statusFormatter={(currentItem, total) => `${currentItem}/${total}`}
-        thumbWidth="175px"
-        length={imageDTOSet.length}
-      >
-        {imageDTOSet.map((img) => (
-          <div key={img.id}>
-            <img src={img.url} alt={img.title} />
-          </div>
-        ))}
-      </Carousel>
-      <IconClose onClick={() => setViewMoreGallery(false)}>
-        <AiOutlineClose />
-      </IconClose>
-    </StyledPopupCarousel>
-  )
-}
 
 const StyledPopupCarousel = styled.div`
   position: fixed;
@@ -167,3 +132,4 @@ const IconClose = styled.button`
     opacity: 1;
   }
 `
+export { StyledPopupCarousel, Carousel, IconClose }

@@ -5,9 +5,9 @@ import { UserContext } from 'context/UserContext'
 import { UserData } from 'views/Details/Reservation/Form/UserData'
 import { ArrivalSchedule } from 'views/Details/Reservation/Form/ArrivalSchedule'
 import { AccommodationCard } from 'views/Details/Reservation/Form/AccommodationCard'
-import { Calendar } from 'views/Details/Accommodation/Calendar/Calendar'
 import { Subtitle } from 'components/Subtitle'
 import { createReservation } from 'services/reservation'
+import { Calendar } from 'views/Details/Accommodation/components/Calendar'
 
 export const Form = ({ accommodation, date, setDate }) => {
   const [checkIn, setCheckIn] = useState(undefined)

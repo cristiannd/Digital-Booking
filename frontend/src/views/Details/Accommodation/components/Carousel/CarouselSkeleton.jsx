@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ShareAndLike } from '../ShareAndLike/ShareAndLike'
+import { ShareAndLike } from '../ShareAndLike'
 
 export const CarouselSkeleton = () => {
   return (
