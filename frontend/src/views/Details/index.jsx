@@ -1,12 +1,12 @@
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { Outlet, useParams } from 'react-router-dom'
 import { DetailsHeader } from 'components/DetailsHeader'
-import Context from 'context/DetailsContext'
+import { DetailsContext } from 'context/DetailsContext'
 import { getAnAccommodation } from 'services/accommodations'
 
 function Details() {
   const [date, setDate] = useState(null)
-  const { accommodation, setAccommodation } = useContext(Context)
+  const { accommodation, setAccommodation } = useContext(DetailsContext)
   const { accommodationId } = useParams()
 
   const getAccommodation = useCallback(async () => {

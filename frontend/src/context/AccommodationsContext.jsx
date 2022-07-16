@@ -1,15 +1,15 @@
 import { createContext, useState } from 'react'
 
-const Context = createContext({})
+const AccommodationsContext = createContext({})
 
-export function AccommodationsContext({ children }) {
+function AccommodationsContextProvider({ children }) {
   const [accommodations, setAccommodations] = useState(null)
 
   return (
-    <Context.Provider value={{ accommodations, setAccommodations }}>
+    <AccommodationsContext.Provider value={{ accommodations, setAccommodations }}>
       {children}
-    </Context.Provider>
+    </AccommodationsContext.Provider>
   )
 }
 
-export default Context
+export { AccommodationsContext, AccommodationsContextProvider }

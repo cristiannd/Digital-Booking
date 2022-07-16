@@ -2,11 +2,11 @@ import { useEffect, useContext, useCallback } from 'react'
 import { getRandomAccommodations } from 'services/accommodations'
 import styled from 'styled-components'
 import { CardAccommodation } from './CardAccommodation'
-import Context from 'context/AccommodationsContext'
+import { AccommodationsContext } from 'context/AccommodationsContext'
 import { CardAccommodationSkeleton } from './CardAccommodationSkeleton'
 
 export const CardAccommodationContainer = ({ selectedCategory, accommodationRef }) => {
-  const { accommodations, setAccommodations } = useContext(Context)
+  const { accommodations, setAccommodations } = useContext(AccommodationsContext)
 
   const getAccommodations = useCallback(async () => {
     const response = await getRandomAccommodations(4)

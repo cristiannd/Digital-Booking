@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 import { Theme } from './assets/styles/Theme'
 import { ScrollToTop } from 'utils/ScrollToTop'
 import { UserContextProvider } from './context/UserContext'
-import { DetailsContext } from 'context/DetailsContext'
+import { DetailsContextProvider } from 'context/DetailsContext'
 import { ProtectedRoute } from 'components/ProtectedRoute'
 import { SuccessMessage } from 'components/SuccessMessage'
 import { Home } from './views/Home/Home'
@@ -23,7 +23,7 @@ import NotFound from 'views/NotFound'
 function App() {
   return (
     <UserContextProvider>
-      <DetailsContext>
+      <DetailsContextProvider>
         <Theme>
           <GlobalStyle />
           <ScrollToTop />
@@ -95,7 +95,7 @@ function App() {
             </Route>
           </Routes>
         </Theme>
-      </DetailsContext>
+      </DetailsContextProvider>
     </UserContextProvider>
   )
 }

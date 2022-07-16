@@ -10,7 +10,7 @@ import {
   getAccommodationsByDate,
   getAccommodationsByDateAndCity,
 } from 'services/accommodations'
-import Context from 'context/AccommodationsContext'
+import { AccommodationsContext } from 'context/AccommodationsContext'
 import { getAllCities } from 'services/cities'
 
 export const Search = ({ setSelectedCategory, executeScroll }) => {
@@ -21,14 +21,14 @@ export const Search = ({ setSelectedCategory, executeScroll }) => {
   const [dateSelected, setDateSelected] = useState('')
   const [cities, setCities] = useState([])
 
-  const { setAccommodations } = useContext(Context)
+  const { setAccommodations } = useContext(AccommodationsContext)
 
   useEffect(() => {
     getCities()
   }, [])
 
   const dateSelectedHandler = () => {
-    const formmatedDate = date?.map((e) => {
+    const formmatedDate = date?.map(e => {
       const formmateDay = e.toLocaleDateString('es-ES', { day: 'numeric' })
       const formmateMonth = e.toLocaleDateString('es-ES', { month: 'short' })
 
@@ -47,11 +47,11 @@ export const Search = ({ setSelectedCategory, executeScroll }) => {
     setCities(response)
   }
 
-  const citySearchHandler = (e) => {
+  const citySearchHandler = e => {
     setCitySelected(e.target.value)
   }
 
-  const searchHandler = async (event) => {
+  const searchHandler = async event => {
     event.preventDefault()
 
     if (!citySelected && !dateSelected) return
@@ -78,21 +78,19 @@ export const Search = ({ setSelectedCategory, executeScroll }) => {
       setAccommodations(null)
       setSelectedCategory(null)
       executeScroll()
-      
+
       const response = await getAccommodationsByDate(date)
       return setAccommodations(response)
     }
-
-
   }
 
   return (
     <SearchStyled>
       <H2Styled>Busca ofertas en hoteles, casas y muchos más</H2Styled>
-      <StyledForm onSubmit={(event) => searchHandler(event)}>
+      <StyledForm onSubmit={event => searchHandler(event)}>
         <LabelStyled
           onFocus={() => setSearchOptionsActived(true)}
-          onBlur={(event) => {
+          onBlur={event => {
             if (!event.currentTarget.contains(event.relatedTarget)) {
               setSearchOptionsActived(false)
             }
@@ -103,10 +101,10 @@ export const Search = ({ setSelectedCategory, executeScroll }) => {
             <IoLocationSharp />
           </SpanStyled>
           <InputStyled
-            type="shared"
-            placeholder="¿A dónde vamos?"
+            type='shared'
+            placeholder='¿A dónde vamos?'
             value={citySelected}
-            onChange={(e) => citySearchHandler(e)}
+            onChange={e => citySearchHandler(e)}
           />
           <SearchPlaceOptions
             searchOptionsActived={searchOptionsActived}
@@ -118,7 +116,7 @@ export const Search = ({ setSelectedCategory, executeScroll }) => {
         </LabelStyled>
         <LabelStyled
           onFocus={() => setCalendarActived(true)}
-          onBlur={(event) => {
+          onBlur={event => {
             if (!event.currentTarget.contains(event.relatedTarget)) {
               setCalendarActived(false)
             }
@@ -129,9 +127,9 @@ export const Search = ({ setSelectedCategory, executeScroll }) => {
             <BiCalendarEvent />
           </SpanStyled>
           <InputStyled
-            type="shared"
+            type='shared'
             disabled
-            placeholder="Check in - Check out"
+            placeholder='Check in - Check out'
             value={dateSelected}
           />
           <CalendarContainer
@@ -142,14 +140,14 @@ export const Search = ({ setSelectedCategory, executeScroll }) => {
             dateSelectedHandler={dateSelectedHandler}
           />
         </LabelStyled>
-        <ButtonStyled type="submit">Buscar</ButtonStyled>
+        <ButtonStyled type='submit'>Buscar</ButtonStyled>
       </StyledForm>
     </SearchStyled>
   )
 }
 
 const SearchStyled = styled.section`
-  background-color: ${(props) => props.theme.colors.grey};
+  background-color: ${props => props.theme.colors.grey};
   color: #fff;
   padding: ${({ theme }) => theme.padding.mobile};
 
@@ -209,7 +207,7 @@ const SpanStyled = styled.span`
 `
 
 const ButtonStyled = styled.button`
-  background-color: ${(props) => props.theme.colors.orange};
+  background-color: ${props => props.theme.colors.orange};
   border-radius: 5px;
   border: 0px;
   color: #fff;

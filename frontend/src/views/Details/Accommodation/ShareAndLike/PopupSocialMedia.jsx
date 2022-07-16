@@ -4,10 +4,10 @@ import { FaLinkedinIn } from 'react-icons/fa'
 import { BsTwitter } from 'react-icons/bs'
 import { AiOutlineInstagram } from 'react-icons/ai'
 import { useContext } from 'react'
-import Context from 'context/DetailsContext'
+import { DetailsContext } from 'context/DetailsContext'
 
 export const PopupSocialMedia = ({ popupActived, setPopupActived }) => {
-  const { accommodation } = useContext(Context)
+  const { accommodation } = useContext(DetailsContext)
 
   if (!accommodation) return <div></div>
 
@@ -16,7 +16,7 @@ export const PopupSocialMedia = ({ popupActived, setPopupActived }) => {
   return (
     <PopupSocialMediaStyled
       onBlur={() => setPopupActived(false)}
-      tabIndex="0"
+      tabIndex='0'
       popupActived={popupActived}
     >
       <Facebook>
@@ -24,10 +24,10 @@ export const PopupSocialMedia = ({ popupActived, setPopupActived }) => {
       </Facebook>
       <Twitter
         href={`https://twitter.com/share?ref_src=twsrc%5Etfw&text=${name}&via=digitalbooking&hashtags=${categoryDTO.singularTitle}`}
-        data-show-count="false"
-        data-lang="es"
-        target="_blank"
-        rel="noreferrer"
+        data-show-count='false'
+        data-lang='es'
+        target='_blank'
+        rel='noreferrer'
       >
         <BsTwitter />
       </Twitter>
@@ -63,7 +63,7 @@ const PopupSocialMediaStyled = styled.div`
       font-size: 1.5rem;
 
       &:hover {
-        color: ${(props) => props.theme.colors.orange};
+        color: ${props => props.theme.colors.orange};
       }
     }
   }
@@ -94,9 +94,9 @@ const Instagram = styled.a`
 `
 
 const LinkedIn = styled.a`
-  color: #C13584;
+  color: #c13584;
 
   &:visited {
-    color: #C13584;
+    color: #c13584;
   }
 `

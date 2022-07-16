@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { getAllCategories } from 'services/categories'
-import Context from 'context/AccommodationsContext'
+import { AccommodationsContext } from 'context/AccommodationsContext'
 import { getAccommodationsByCategory } from 'services/accommodations'
 import { CardCategory } from './CardCategory'
 import { CardCategorySkeleton } from './CardCategorySkeleton'
 
 export const CardCategoryContainer = ({ selectedCategory, setSelectedCategory, executeScroll }) => {
   const [categories, setCategories] = useState(null)
-  const { setAccommodations } = useContext(Context)
+  const { setAccommodations } = useContext(AccommodationsContext)
 
   const getCategories = useCallback(async () => {
     const response = await getAllCategories()
@@ -24,11 +24,10 @@ export const CardCategoryContainer = ({ selectedCategory, setSelectedCategory, e
 
     setAccommodations(null)
     executeScroll()
-    
+
     const response = await getAccommodationsByCategory(category.id)
     setAccommodations(response)
     setSelectedCategory(category)
-    
   }
 
   if (!categories) {

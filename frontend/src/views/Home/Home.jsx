@@ -1,20 +1,19 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import styled from 'styled-components'
+import { AccommodationsContextProvider } from 'context/AccommodationsContext'
 import { Search } from './search/Search'
 import { CardCategoryContainer } from './CardCategory/CardCategoryContainer'
 import { CardAccommodationContainer } from './CardAccommodation/CardAccommodationContainer'
-import { AccommodationsContext } from 'context/AccommodationsContext'
-import { useRef } from 'react'
 
 export const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(null)
 
   const accommodationRef = useRef(null)
 
-  const executeScroll = () => accommodationRef.current.scrollIntoView({behavior: "smooth"})
+  const executeScroll = () => accommodationRef.current.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <AccommodationsContext>
+    <AccommodationsContextProvider>
       <HomeStyle>
         <Search setSelectedCategory={setSelectedCategory} executeScroll={executeScroll} />
         <CardCategoryContainer
@@ -22,9 +21,12 @@ export const Home = () => {
           setSelectedCategory={setSelectedCategory}
           executeScroll={executeScroll}
         />
-        <CardAccommodationContainer accommodationRef={accommodationRef} selectedCategory={selectedCategory} />
+        <CardAccommodationContainer
+          accommodationRef={accommodationRef}
+          selectedCategory={selectedCategory}
+        />
       </HomeStyle>
-    </AccommodationsContext>
+    </AccommodationsContextProvider>
   )
 }
 

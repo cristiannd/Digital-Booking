@@ -2,14 +2,14 @@ import styled from 'styled-components'
 import { ButtonFilled } from 'components/Button'
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Context from 'context/DetailsContext'
+import { DetailsContext } from 'context/DetailsContext'
 
 export const Footer = ({ description, id }) => {
-  const {accommodation, setAccommodation} = useContext(Context)
+  const { accommodation, setAccommodation } = useContext(DetailsContext)
   const navigate = useNavigate()
 
   const viewMoreHandler = () => {
-    if(id !== accommodation?.id) setAccommodation(null)
+    if (id !== accommodation?.id) setAccommodation(null)
 
     navigate(`/product/${id}`)
   }
