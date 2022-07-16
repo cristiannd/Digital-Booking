@@ -3,7 +3,7 @@ import { Subtitle } from 'components/Subtitle'
 import { Divider } from 'components/Divider'
 import { TermsAndConditions } from 'components/TermsAndConditions'
 import { useOutletContext } from 'react-router-dom'
-import { Form } from './Form'
+import { Form } from './components/Form'
 
 export const Reservation = () => {
   const { accommodation, date, setDate } = useOutletContext()
