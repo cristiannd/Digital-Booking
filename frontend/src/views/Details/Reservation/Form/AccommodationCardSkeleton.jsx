@@ -1,13 +1,12 @@
-import { ButtonFilled } from 'components/Button'
-import Divider from 'components/Divider'
-import React from 'react'
-import { IoLocationSharp } from 'react-icons/io5'
 import styled from 'styled-components'
+import { ButtonFilled } from 'components/Button'
+import { Divider } from 'components/Divider'
+import { IoLocationSharp } from 'react-icons/io5'
 
 export const AccommodationCardSkeleton = () => {
   return (
     <StyledAccommodationCardSkeleton>
-      <Subtitle view="reservation">Detalle de la reserva</Subtitle>
+      <Subtitle view='reservation'>Detalle de la reserva</Subtitle>
       <div>
         <div />
         <div>
@@ -54,9 +53,9 @@ const StyledAccommodationCardSkeleton = styled.div`
     display: grid;
     height: 100%;
 
-    @media screen and (min-width: ${({ theme }) =>
-        theme.viewport.tablet}) and (max-width: ${({ theme }) =>
-        theme.viewport.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.viewport.tablet}) and (max-width: ${({
+        theme,
+      }) => theme.viewport.desktop}) {
       grid-template-columns: repeat(2, 1fr);
       padding: 1rem;
       gap: 0.5rem;
@@ -80,9 +79,9 @@ const StyledAccommodationCardSkeleton = styled.div`
       display: grid;
       padding: 1rem 0.5rem;
 
-      @media screen and (min-width: ${({ theme }) =>
-          theme.viewport.tablet}) and (max-width: ${({ theme }) =>
-          theme.viewport.desktop}) {
+      @media screen and (min-width: ${({ theme }) => theme.viewport.tablet}) and (max-width: ${({
+          theme,
+        }) => theme.viewport.desktop}) {
         padding: 0 0.5rem;
       }
 

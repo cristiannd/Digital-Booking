@@ -18,7 +18,6 @@ import java.util.Set;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Country {
-
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     Long id ;
@@ -42,3 +41,4 @@ public class Country {
         return getClass().hashCode();
     }
 }
+

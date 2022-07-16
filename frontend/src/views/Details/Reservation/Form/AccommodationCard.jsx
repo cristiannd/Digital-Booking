@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { StarRating } from 'components/Rating'
 import { IoLocationSharp } from 'react-icons/io5'
-import Divider from 'components/Divider'
+import { Divider } from 'components/Divider'
 import { ButtonFilled } from 'components/Button'
 import { AccommodationCardSkeleton } from './AccommodationCardSkeleton'
 
@@ -23,10 +23,16 @@ export const AccommodationCard = ({ accommodation, date }) => {
         <div>
           <h3>{categoryDTO.title}</h3>
           <h2>{name}</h2>
-          <span><StarRating rating={score} /></span>
+          <span>
+            <StarRating rating={score} />
+          </span>
           <Location>
-            <span><IoLocationSharp /></span>
-            <p>{address} {addressNumber}, {city}, {country}</p>
+            <span>
+              <IoLocationSharp />
+            </span>
+            <p>
+              {address} {addressNumber}, {city}, {country}
+            </p>
           </Location>
           <Divider />
           <Check>
@@ -58,9 +64,7 @@ const StyledAccommodationCard = styled.div`
     display: grid;
     height: 100%;
 
-    @media screen
-    and (min-width: ${({ theme }) => theme.viewport.tablet})
-    and (max-width: ${({theme}) => theme.viewport.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.viewport.tablet}) and (max-width: ${({theme,}) => theme.viewport.desktop}) {
       grid-template-columns: repeat(2, 1fr);
       padding: 1rem;
       gap: 0.5rem;
@@ -84,9 +88,9 @@ const StyledAccommodationCard = styled.div`
       display: grid;
       padding: 1rem 0.5rem;
 
-      @media screen
-      and (min-width: ${({ theme }) => theme.viewport.tablet})
-      and (max-width: ${({ theme }) => theme.viewport.desktop}) {
+      @media screen and (min-width: ${({ theme }) => theme.viewport.tablet}) and (max-width: ${({
+          theme,
+        }) => theme.viewport.desktop}) {
         padding: 0 0.5rem;
       }
 

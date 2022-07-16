@@ -1,15 +1,13 @@
-import React from 'react'
+import { useState, useContext } from 'react'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
+import { UserContext } from 'context/UserContext'
 import { UserData } from 'views/Details/Reservation/Form/UserData'
 import { ArrivalSchedule } from 'views/Details/Reservation/Form/ArrivalSchedule'
 import { AccommodationCard } from 'views/Details/Reservation/Form/AccommodationCard'
 import { Calendar } from 'views/Details/Accommodation/Calendar/Calendar'
 import { Subtitle } from 'components/Subtitle'
 import { createReservation } from 'services/reservation'
-import { useState } from 'react'
-import { useContext } from 'react'
-import UserContext from 'context/LoggedUserContext'
-import { useNavigate } from 'react-router-dom'
 
 export const Form = ({ accommodation, date, setDate }) => {
   const [checkIn, setCheckIn] = useState(undefined)
@@ -17,7 +15,7 @@ export const Form = ({ accommodation, date, setDate }) => {
 
   const navigate = useNavigate()
 
-  const formHandler = async (event) => {
+  const formHandler = async event => {
     event.preventDefault()
 
     if (!loggedUser || !accommodation || !date || !checkIn) return
@@ -35,15 +33,15 @@ export const Form = ({ accommodation, date, setDate }) => {
 
   return (
     <StyledForm onSubmit={formHandler}>
-      <Subtitle view="reservation">Completá tus datos</Subtitle>
+      <Subtitle view='reservation'>Completá tus datos</Subtitle>
       <div>
         <div>
           <UserData />
-          <Subtitle view="reservation">Seleccioná tu fecha de reserva</Subtitle>
+          <Subtitle view='reservation'>Seleccioná tu fecha de reserva</Subtitle>
           <CalendarContainer>
             <Calendar date={date} setDate={setDate} accommodation={accommodation} />
           </CalendarContainer>
-          <Subtitle view="reservation">Tu horario de llegada</Subtitle>
+          <Subtitle view='reservation'>Tu horario de llegada</Subtitle>
           <ArrivalSchedule checkIn={checkIn} setCheckIn={setCheckIn} />
         </div>
         <AccommodationCard accommodation={accommodation} date={date} />

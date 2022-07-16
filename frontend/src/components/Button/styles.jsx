@@ -1,15 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const ButtonFilled = ({ children, onClick, type }) => {
-  return (
-    <ButtonFilledStyled type={type} onClick={onClick}>
-      {children}
-    </ButtonFilledStyled>
-  )
-}
-
-const ButtonFilledStyled = styled.button`
+const StyledButtonFilled = styled.button`
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
@@ -25,11 +17,7 @@ const ButtonFilledStyled = styled.button`
   }
 `
 
-export const LinkFilled = ({ children, to }) => {
-  return <LinkFilledStyled to={to}>{children}</LinkFilledStyled>
-}
-
-const LinkFilledStyled = styled(Link)`
+const StyledLinkFilled = styled(Link)`
   display: grid;
   place-content: center;
   font-size: 1rem;
@@ -48,3 +36,5 @@ const LinkFilledStyled = styled(Link)`
     transform: scale(1.01);
   }
 `
+
+export { StyledButtonFilled, StyledLinkFilled }

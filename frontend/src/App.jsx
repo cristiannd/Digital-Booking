@@ -2,17 +2,17 @@ import { Route, Routes } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
 import { Theme } from './assets/styles/Theme'
 import { ScrollToTop } from 'utils/ScrollToTop'
-import { LoggedUserContext } from './context/LoggedUserContext'
+import { UserContextProvider } from './context/UserContext'
 import { DetailsContext } from 'context/DetailsContext'
 import { ProtectedRoute } from 'components/ProtectedRoute'
-import SuccessMessage from 'components/SuccessMessage'
+import { SuccessMessage } from 'components/SuccessMessage'
 import { Home } from './views/Home/Home'
 import { Login } from './views/Login/Login'
 import { Register } from './views/Register/Register'
 import { Accommodation } from './views/Details/Accommodation/Accommodation'
 import { Reservation } from 'views/Details/Reservation/Reservation'
 import { Main } from 'views/Main/Main'
-import { Details } from 'views/Details/Details'
+import Details from 'views/Details'
 import { Profile } from 'views/Profile/Profile'
 import Management from 'views/Management'
 import ProfileReservations from 'views/Profile/ProfileReservations'
@@ -22,7 +22,7 @@ import NotFound from 'views/NotFound'
 
 function App() {
   return (
-    <LoggedUserContext>
+    <UserContextProvider>
       <DetailsContext>
         <Theme>
           <GlobalStyle />
@@ -96,7 +96,7 @@ function App() {
           </Routes>
         </Theme>
       </DetailsContext>
-    </LoggedUserContext>
+    </UserContextProvider>
   )
 }
 

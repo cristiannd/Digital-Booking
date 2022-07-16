@@ -3,7 +3,7 @@ import { UserLocalStorage } from 'services/localStorage'
 
 const UserContext = createContext({})
 
-export function LoggedUserContext({ children }) {
+function UserContextProvider({ children }) {
   const [loggedUser, setLoggedUser] = useState(null)
 
   useEffect(() => {
@@ -12,10 +12,8 @@ export function LoggedUserContext({ children }) {
   }, [])
 
   return (
-    <UserContext.Provider value={{ loggedUser, setLoggedUser }}>
-      {children}
-    </UserContext.Provider>
+    <UserContext.Provider value={{ loggedUser, setLoggedUser }}>{children}</UserContext.Provider>
   )
 }
 
-export default UserContext
+export { UserContext, UserContextProvider }

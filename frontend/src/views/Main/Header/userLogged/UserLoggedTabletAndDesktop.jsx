@@ -1,8 +1,8 @@
-import styled from 'styled-components'
-import { AiOutlineClose } from 'react-icons/ai'
 import { useContext } from 'react'
-import UserContext from 'context/LoggedUserContext'
+import styled from 'styled-components'
 import { Link, useLocation } from 'react-router-dom'
+import { UserContext } from 'context/UserContext'
+import { AiOutlineClose } from 'react-icons/ai'
 
 const ButtonToManagement = ({ loggedUser, location }) => {
   if (loggedUser?.role !== 'ROLE_ADMIN') return

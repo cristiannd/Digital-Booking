@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api'
 
-export default function Map({ latitude, longitude }) {
+function Map({ latitude, longitude }) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_APY_KEY,
@@ -28,3 +28,5 @@ export default function Map({ latitude, longitude }) {
     </GoogleMap>
   )
 }
+
+export { Map }

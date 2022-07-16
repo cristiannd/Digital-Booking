@@ -8,8 +8,8 @@ import { Location } from './Location/Location'
 import { SubHeader } from './SubHeader/SubHeader'
 import { AvailableDates } from './AvailableDates/AvailableDates'
 import { Subtitle } from 'components/Subtitle'
-import Divider from 'components/Divider'
 import { TermsAndConditions } from 'components/TermsAndConditions'
+import { Divider } from 'components/Divider'
 
 export const Accommodation = () => {
   const { accommodation, date, setDate } = useOutletContext()
@@ -25,26 +25,24 @@ export const Accommodation = () => {
         <Gallery accommodation={accommodation} />
       )}
 
-      <Subtitle view="accommodation">
-        {accommodation?.descriptionTitle}
-      </Subtitle>
+      <Subtitle view='accommodation'>{accommodation?.descriptionTitle}</Subtitle>
       <Description>{accommodation?.description}</Description>
 
-      <Subtitle view="accommodation">¿Qué ofrece este lugar?</Subtitle>
-      <Divider lineColor="orange" />
+      <Subtitle view='accommodation'>¿Qué ofrece este lugar?</Subtitle>
+      <Divider lineColor='orange' />
       <Features accommodation={accommodation} />
 
-      <Subtitle view="accommodation" background="lightGrey">
+      <Subtitle view='accommodation' background='lightGrey'>
         Fechas disponibles
       </Subtitle>
       <AvailableDates date={date} setDate={setDate} accommodation={accommodation} />
 
-      <Subtitle view="accommodation">¿Dónde vas a estar?</Subtitle>
-      <Divider lineColor="orange" />
+      <Subtitle view='accommodation'>¿Dónde vas a estar?</Subtitle>
+      <Divider lineColor='orange' />
       <Location accommodation={accommodation} />
 
-      <Subtitle view="accommodation">Que tenés que saber</Subtitle>
-      <Divider lineColor="orange" />
+      <Subtitle view='accommodation'>Que tenés que saber</Subtitle>
+      <Divider lineColor='orange' />
       <TermsAndConditions accommodation={accommodation} />
     </StyledAccommodation>
   )

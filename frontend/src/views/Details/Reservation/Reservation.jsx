@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Subtitle } from 'components/Subtitle'
-import Divider from 'components/Divider'
+import { Divider } from 'components/Divider'
 import { TermsAndConditions } from 'components/TermsAndConditions'
 import { useOutletContext } from 'react-router-dom'
 import { Form } from './Form/Form'
@@ -11,10 +11,10 @@ export const Reservation = () => {
   return (
     <StyledReservation>
       <Form accommodation={accommodation} date={date} setDate={setDate} />
-      <Subtitle background="white" view="accommodation">
+      <Subtitle background='white' view='accommodation'>
         Qué tenés que saber
       </Subtitle>
-      <Divider lineColor="orange" />
+      <Divider lineColor='orange' />
       <TermsAndConditions accommodation={accommodation} />
     </StyledReservation>
   )

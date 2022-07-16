@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export default function Divider({ lineColor }) {
+function Divider({ lineColor }) {
   return <StyledDivider lineColor={lineColor} />
 }
 
@@ -12,3 +12,5 @@ const StyledDivider = styled.div`
     else return '1px solid ' + theme.colors.grey
   }};
 `
+
+export { Divider }

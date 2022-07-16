@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Divider from 'components/Divider'
+import { Divider } from 'components/Divider'
 import { useState } from 'react'
 
 export const OptionsList = ({
@@ -24,7 +24,7 @@ export const OptionsList = ({
     return featureName.includes(featureNameToSearch)
   }
 
-  const featureClickHandler = (featureOnDatabase) => {
+  const featureClickHandler = featureOnDatabase => {
     setFeaturesName(featuresName.concat(featureOnDatabase.feature))
     setSelectedFeatures(selectedFeatures.concat(featureOnDatabase))
     setFeatureOnInput('')
@@ -37,10 +37,7 @@ export const OptionsList = ({
         .filter(featureOnDatabase => filterSearchedFeature(featureOnDatabase))
         .map((featureOnDatabase, indice, array) => (
           <li key={featureOnDatabase.id} className='list-location'>
-            <Row
-              type='button'
-              onClick={() => featureClickHandler(featureOnDatabase)}
-            >
+            <Row type='button' onClick={() => featureClickHandler(featureOnDatabase)}>
               <OptionRow>
                 <div>{featureOnDatabase.feature}</div>
               </OptionRow>

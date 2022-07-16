@@ -1,6 +1,6 @@
-import UserContext from 'context/LoggedUserContext'
 import { useContext } from 'react'
 import styled from 'styled-components'
+import { UserContext } from 'context/UserContext'
 import { UserDataSkeleton } from './UserDataSkeleton'
 
 export const UserData = () => {
@@ -11,46 +11,41 @@ export const UserData = () => {
   return (
     <StyledUserData>
       <StyledInput>
-        <StyledLabel htmlFor="first-name">Nombre</StyledLabel>
+        <StyledLabel htmlFor='first-name'>Nombre</StyledLabel>
         <input
-          type="text"
-          id="first-name"
-          placeholder="Ingrese su nombre"
+          type='text'
+          id='first-name'
+          placeholder='Ingrese su nombre'
           value={loggedUser.name}
           disabled
           required
         />
       </StyledInput>
       <StyledInput>
-        <StyledLabel htmlFor="last-name">Apellido</StyledLabel>
+        <StyledLabel htmlFor='last-name'>Apellido</StyledLabel>
         <input
-          type="text"
-          id="last-name"
-          placeholder="Ingrese su apellido"
+          type='text'
+          id='last-name'
+          placeholder='Ingrese su apellido'
           value={loggedUser.lastname}
           disabled
           required
         />
       </StyledInput>
       <StyledInput>
-        <StyledLabel htmlFor="email">Correo electrónico</StyledLabel>
+        <StyledLabel htmlFor='email'>Correo electrónico</StyledLabel>
         <input
-          type="email"
-          id="email"
-          placeholder="Ingrese su correo electrónico"
+          type='email'
+          id='email'
+          placeholder='Ingrese su correo electrónico'
           value={loggedUser.email}
           disabled
           required
         />
       </StyledInput>
       <StyledSelect>
-        <StyledLabel htmlFor="city">Ciudad</StyledLabel>
-        <input
-          type="text"
-          id="city"
-          placeholder="Elija su ciudad de residencia"
-          required
-        />
+        <StyledLabel htmlFor='city'>Ciudad</StyledLabel>
+        <input type='text' id='city' placeholder='Elija su ciudad de residencia' required />
       </StyledSelect>
     </StyledUserData>
   )

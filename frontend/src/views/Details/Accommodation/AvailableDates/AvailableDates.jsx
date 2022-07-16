@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import UserContext from 'context/LoggedUserContext'
+import { UserContext } from 'context/UserContext'
 import { ButtonFilled } from 'components/Button'
 import { Calendar } from '../Calendar/Calendar'
 import { AvailableDatesSkeleton } from './AvailableDatesSkeleton'

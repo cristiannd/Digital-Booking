@@ -1,14 +1,14 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { UserContext } from 'context/UserContext'
+import { UserLoggedMobile } from 'views/Main/Header/userLogged/UserLoggedMobile'
+import { UserLoggedMobileSignOut } from 'views/Main/Header/userLogged/UserLoggedMobileSignOut'
 import { BsFacebook } from 'react-icons/bs'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { BsTwitter } from 'react-icons/bs'
 import { AiOutlineInstagram } from 'react-icons/ai'
 import { AiOutlineClose } from 'react-icons/ai'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { UserLoggedMobile } from 'views/Main/Header/userLogged/UserLoggedMobile'
-import { UserLoggedMobileSignOut } from 'views/Main/Header/userLogged/UserLoggedMobileSignOut'
-import { useContext } from 'react'
-import UserContext from 'context/LoggedUserContext'
 
 const ButtonToManagement = ({ loggedUser, location, navigateHandler }) => {
   if (loggedUser?.role !== 'ROLE_ADMIN') return

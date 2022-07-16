@@ -1,14 +1,6 @@
 import styled from 'styled-components'
 
-export const Subtitle = ({ children, background, view }) => {
-  return (
-    <SubtitleStyled view={view} background={background}>
-      {children}
-    </SubtitleStyled>
-  )
-}
-
-const SubtitleStyled = styled.h3`
+const StyledSubtitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
   background-color: ${({ theme, background }) => {
@@ -33,3 +25,5 @@ const SubtitleStyled = styled.h3`
     }};
   }
 `
+
+export { StyledSubtitle }

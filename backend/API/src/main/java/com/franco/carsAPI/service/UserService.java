@@ -26,7 +26,7 @@ import java.util.Set;
 
 @Log4j2
 @Service
-public class UserService implements ServiceInterfaceDTO<User , UserDTO , Long >, UserDetailsService {
+public class UserService implements ServiceInterfaceDTO<User , UserDTO , Long>, UserDetailsService {
 
     @Autowired
     private UserRepository repository ;

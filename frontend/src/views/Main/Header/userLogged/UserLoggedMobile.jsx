@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
-import UserContext from 'context/LoggedUserContext'
+import { UserContext } from 'context/UserContext'
 
-export const UserLoggedMobile = ({navigateToProfileHandler}) => {
+export const UserLoggedMobile = ({ navigateToProfileHandler }) => {
   const { loggedUser } = useContext(UserContext)
 
   return (
@@ -45,7 +45,7 @@ const UserLoggedMobileStyled = styled.div`
     transition: 0.1s ease-out;
 
     :hover {
-      background-color: ${(props) => props.theme.colors.lightGrey};
+      background-color: ${props => props.theme.colors.lightGrey};
       transform: scale(1.1);
     }
   }

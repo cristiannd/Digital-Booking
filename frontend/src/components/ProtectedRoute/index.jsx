@@ -1,9 +1,9 @@
-import UserContext from 'context/LoggedUserContext'
 import { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
+import { UserContext } from 'context/UserContext'
 import { UserLocalStorage } from 'services/localStorage'
 
-export const ProtectedRoute = ({ children, redirectPath, permissionsForLoggedUser }) => {
+function ProtectedRoute({ children, redirectPath, permissionsForLoggedUser }) {
   const { loggedUser } = useContext(UserContext)
   const user = UserLocalStorage.get()
 
@@ -17,3 +17,5 @@ export const ProtectedRoute = ({ children, redirectPath, permissionsForLoggedUse
 
   return children
 }
+
+export { ProtectedRoute }

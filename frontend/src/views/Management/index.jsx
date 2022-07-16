@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import SearchInput from 'views/Management/PlacesSearch'
 import { useEffect, useState } from 'react'
 import { getAllCities } from 'services/cities'
@@ -11,8 +12,7 @@ import { getAllFeatures } from 'services/management'
 import { getAllPolicies } from 'services/getPolicies'
 import UploadImages from './UploadImages'
 import { createAnAccommodation } from 'services/accommodations'
-import { useContext } from 'react'
-import UserContext from 'context/LoggedUserContext'
+import { UserContext } from 'context/UserContext'
 import { useNavigate } from 'react-router-dom'
 
 const Management = () => {
@@ -311,11 +311,10 @@ const StyledManagement = styled.div`
       padding-top: 1rem;
     }
 
-    & > button[type=submit] {
+    & > button[type='submit'] {
       @media screen and (min-width: ${props => props.theme.viewport.tablet}) {
         width: 500px;
         margin: 0 auto;
-        
       }
     }
   }

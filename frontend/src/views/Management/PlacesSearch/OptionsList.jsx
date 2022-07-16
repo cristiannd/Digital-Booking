@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { GoLocation } from 'react-icons/go'
-import Divider from 'components/Divider'
+import { Divider } from 'components/Divider'
 
 export const OptionsList = ({
   ActivedSearchOptions,
@@ -8,19 +8,19 @@ export const OptionsList = ({
   selectedOption,
   setSelectedOption,
   data,
-  setSelectedCity
+  setSelectedCity,
 }) => {
   return (
     <StyledOptions ActivedSearchOptions={ActivedSearchOptions}>
       {data
-        ?.filter((e) => {
+        ?.filter(e => {
           const fullName = `${e.cityName}, ${e.country}`
           return fullName.toLowerCase().includes(selectedOption.toLowerCase())
         })
         .map((e, indice, array) => (
-          <li key={e.id} className="list-location">
+          <li key={e.id} className='list-location'>
             <Row
-              type="button"
+              type='button'
               onClick={() => {
                 setSelectedOption(`${e.cityName}, ${e.country}`)
                 setActivedSearchOptions(false)
@@ -28,15 +28,15 @@ export const OptionsList = ({
               }}
             >
               <Location>
-                <div className="location-icon">
+                <div className='location-icon'>
                   <GoLocation />
                 </div>
-                <div className="location">
-                  <p className="city">{e.cityName}</p>
-                  <p className="country">{e.country}</p>
+                <div className='location'>
+                  <p className='city'>{e.cityName}</p>
+                  <p className='country'>{e.country}</p>
                 </div>
               </Location>
-              {array.length - 1 > indice && <Divider lineColor="orange" />}
+              {array.length - 1 > indice && <Divider lineColor='orange' />}
             </Row>
           </li>
         ))}
@@ -73,7 +73,7 @@ const StyledOptions = styled.ul`
   border-radius: 0px 0px 10px 10px;
   box-shadow: 0px 0px 10px 0px #00000029;
 
-  display: ${(props) => (props.ActivedSearchOptions ? 'block' : 'none')};
+  display: ${props => (props.ActivedSearchOptions ? 'block' : 'none')};
 
   ::-webkit-scrollbar {
     display: none;
@@ -89,7 +89,7 @@ const StyledOptions = styled.ul`
         justify-content: center;
         align-items: center;
         font-size: 23px;
-        color: ${(props) => props.theme.colors.grey};
+        color: ${props => props.theme.colors.grey};
       }
 
       div.location {

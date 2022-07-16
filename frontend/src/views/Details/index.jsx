@@ -1,10 +1,10 @@
-import Context from 'context/DetailsContext'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { Outlet, useParams } from 'react-router-dom'
+import { DetailsHeader } from 'components/DetailsHeader'
+import Context from 'context/DetailsContext'
 import { getAnAccommodation } from 'services/accommodations'
-import { DetailsHeader } from '../../components/DetailsHeader/DetailsHeader'
 
-export const Details = () => {
+function Details() {
   const [date, setDate] = useState(null)
   const { accommodation, setAccommodation } = useContext(Context)
   const { accommodationId } = useParams()
@@ -17,7 +17,7 @@ export const Details = () => {
   useEffect(() => {
     getAccommodation()
   }, [getAccommodation])
-  console.log(accommodation)
+
   return (
     <>
       <DetailsHeader
@@ -28,3 +28,5 @@ export const Details = () => {
     </>
   )
 }
+
+export default Details

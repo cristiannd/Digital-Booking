@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Header } from './Header/Header'
 import { Body } from './Body/Body'
 import { Footer } from './Footer/Footer'
-import UserContext from 'context/LoggedUserContext'
+import { UserContext } from 'context/UserContext'
 import { AiFillHeart } from 'react-icons/ai'
 import { deleteFavoriteAccommodation, saveFavoriteAccommodation } from 'services/user'
 

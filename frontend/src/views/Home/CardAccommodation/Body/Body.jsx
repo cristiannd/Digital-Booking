@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { FeatureIcons } from 'components/Feature'
 import { IoLocationSharp } from 'react-icons/io5'
 import { ButtonFilled } from 'components/Button'
-import  Map from 'components/Map'
+import { Map } from 'components/Map'
 
 export const Body = ({ features, location }) => {
   const [viewMap, setViewMap] = useState(false)

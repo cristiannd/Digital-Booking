@@ -1,11 +1,11 @@
 import { ButtonFilled } from 'components/Button'
-import Divider from 'components/Divider'
+import { Divider } from 'components/Divider'
 import { StarRating } from 'components/Rating'
 import { useState } from 'react'
 import { IoLocationSharp } from 'react-icons/io5'
 import { useOutletContext } from 'react-router-dom'
 import styled from 'styled-components'
-import Map from 'components/Map'
+import { Map } from 'components/Map'
 import ProfileEmpty from './ProfileEmpty'
 
 const ReservationCard = ({ reservationList }) => {

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { getAUser } from 'services/user'
-import UserContext from 'context/LoggedUserContext'
+import { UserContext } from 'context/UserContext'
 import { findReservationByUserId } from 'services/reservation'
 
 export const Profile = () => {
